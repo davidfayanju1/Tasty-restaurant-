@@ -13,6 +13,10 @@ const GlobalStyles = createGlobalStyle`
         font-size: 100%;
     }
 
+    .paytone-one {
+        font-family: 'Paytone One', sans-serif;
+    }
+
     
 `
 
