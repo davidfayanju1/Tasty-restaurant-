@@ -11,6 +11,7 @@ const Book = () => {
                     <img src={ mae } alt="card image" />
                 </div>
                 <div className="card-text">
+                    <h1>WORK HOURS.</h1>
                     <p>Open from Sunday to Saturday from 8:00 to 22:00 WAT.</p>
                     <button>BOOK YOUR TABLE</button>
                 </div>
@@ -52,6 +53,11 @@ const StyledBook = styled.div`
     .card-text {
         width: 50%;
         margin-left: 2rem;
+
+        h1 {
+            font-family: 'Paytone One', sans-serif;
+            margin-bottom: 1.5rem;
+        }
 
         p {
 

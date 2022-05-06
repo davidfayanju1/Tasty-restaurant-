@@ -110,14 +110,14 @@ const BackgroundImage = styled.div`
         width: 100%;
 
         h1 {
-            font-size: 8vmax;
+            font-size: 8vw;
             margin-bottom: 1.4rem;
         }
 
         p{  
             font-size: 1.1rem;
             margin-bottom: 2rem;
-            width: 70%;
+            width: 90%;
         }
 
         button {
@@ -188,7 +188,7 @@ const StyledNav = styled.nav`
     height: 10vh;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 5rem;
+    padding: 1rem 3rem;
     align-items: center;
     width: 100%;
     transition: all 0.4s ease-in-out;
