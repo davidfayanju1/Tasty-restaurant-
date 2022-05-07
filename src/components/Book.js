@@ -69,7 +69,7 @@ const StyledBook = styled.div`
             background-color: transparent;
             color: black;
             border: black 1px solid;
-            padding: 1rem 4rem;
+            padding: 0.9rem 3rem;
             cursor: pointer;
             position: relative;
             z-index: 1;

@@ -117,7 +117,7 @@ const BackgroundImage = styled.div`
         p{  
             font-size: 1.1rem;
             margin-bottom: 2rem;
-            width: 90%;
+            width: 100%;
         }
 
         button {

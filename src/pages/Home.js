@@ -3,6 +3,7 @@ import React from 'react';
 import Nav from '../components/Nav';
 import Book from '../components/Book';
 import Menu from '../components/Menu';
+import Snack from '../components/Snacks';
 
 const Home = () => {
     return ( 
@@ -10,6 +11,7 @@ const Home = () => {
             <Nav />
             <Book />
             <Menu />
+            <Snack />
         </div>
      );
 }

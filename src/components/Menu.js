@@ -12,10 +12,19 @@ const showVariant = {
 
 const Menu = () => {
 
-    
+    const [ toggleMenu, setToggleMenu ] = useState(false);
 
     const control = useAnimation();
     const [ref, inView ] = useInView();
+
+    const clickMenu = () => {
+
+        setToggleMenu(!toggleMenu);
+
+        console.log('clicked', toggleMenu);
+    }
+
+
 
     useEffect (() => {
 
@@ -33,7 +42,7 @@ const Menu = () => {
 
 
     return ( 
-        <StyledMenu ref={ ref } initial="hidden" animate= { control} variants={ showVariant }>
+        <StyledMenu ref={ ref } initial="hidden" animate= { control } variants={ showVariant }>
             <div className="inner-menu">
                 <p>Genuine and delicious</p>
                 <h1>OUR MENU</h1>
@@ -43,48 +52,44 @@ const Menu = () => {
                         <div className="menu-flex-item">
                             <div className="meal-name-flex">
                                 <h4>RICE AND BEANS</h4>
-                                <b>+</b>
+                                <Naira>4500</Naira>
                             </div>
 
-                            <div className="meal-story">
+                            <div className='meal-story'>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                                <Naira>4500</Naira>
                             </div>
                         </div>
 
                         <div className="menu-flex-item">
-                            <div className="meal-name-flex">
+                            <div className="meal-name-flex"   onClick={ clickMenu }>
                                 <h4>EWA AGOYIN.</h4>
-                                <b>+</b>
+                                <Naira>4500</Naira>
                             </div>
 
-                            <div className="meal-story">
+                            <div className='meal-story'>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                                <Naira>4500</Naira>
                             </div>
                         </div>
 
                         <div className="menu-flex-item">
                             <div className="meal-name-flex">
                                 <h4>RICE AND BEANS</h4>
-                                <b>+</b>
+                                <Naira>4500</Naira>
                             </div>
 
                             <div className="meal-story">
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                                <Naira>4500</Naira>
                             </div>
                         </div>
 
                         <div className="menu-flex-item">
                             <div className="meal-name-flex">
                                 <h4>EWA AGOYIN.</h4>
-                                <b>+</b>
+                                <Naira>4500</Naira>
                             </div>
 
                             <div className="meal-story">
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                                <Naira>4500</Naira>
                             </div>
                         </div>
                     </div>
@@ -92,49 +97,45 @@ const Menu = () => {
                     <div className="menu-right-container">
                         <div className="menu-flex-item">
                             <div className="meal-name-flex">
-                                <h4>Nigerian Jollof</h4>
-                                <b>+</b>
+                                <h4>NIGERIAN JOLLOF</h4>
+                                <Naira>3455</Naira>
                             </div>
 
                             <div className="meal-story">
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                                <Naira>3455</Naira>
                             </div>
                         </div>
 
                         <div className="menu-flex-item">
                             <div className="meal-name-flex">
                                 <h4>YAM PORRIDGE</h4>
-                                <b>+</b>
+                                <Naira>4500</Naira>
                             </div>
 
                             <div className="meal-story">
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                                <Naira>4500</Naira>
                             </div>
                         </div>
 
                         <div className="menu-flex-item">
                             <div className="meal-name-flex">
-                                <h4>Nigerian Jollof</h4>
-                                <b>+</b>
+                                <h4>NIGERIAN JOLLOF</h4>
+                                <Naira>3455</Naira>
                             </div>
 
                             <div className="meal-story">
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                                <Naira>3455</Naira>
                             </div>
                         </div>
 
                         <div className="menu-flex-item">
                             <div className="meal-name-flex">
                                 <h4>YAM PORRIDGE</h4>
-                                <b>+</b>
+                                <Naira>4500</Naira>
                             </div>
 
                             <div className="meal-story">
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
-                                <Naira>4500</Naira>
                             </div>
                         </div>
                     </div>
@@ -180,6 +181,7 @@ const StyledMenu = styled(motion.div)`
             margin-top: 2rem;
 
             button {
+                border: none;
                 background-color: #231F20;
                 color: white;
                 font-size: 0.95rem;
@@ -209,12 +211,16 @@ const StyledMenu = styled(motion.div)`
                 width: 100%;
                 margin-bottom: 2rem;
             }
+
             
-            .meal-name-flex, .meal-story {
+            
+            .meal-name-flex{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 cursor: pointer;
+                margin-bottom: 1rem;
+
                 
                 p {
                     color: grey;
@@ -222,10 +228,41 @@ const StyledMenu = styled(motion.div)`
                 }
             }
 
-            .meal-name-flex {
-                margin-bottom: 1rem;
+            .meal-story::after {
+                content: '';
+                width: 100%;
+                height: 0.1rem;
+                background-color: black;
+                display: block;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.45s ease-in-out
             }
 
+            .menu-flex-item:hover {
+                
+                .meal-story::after {
+                    transform: scaleX(1.02);
+                }
+            }
+
+            .meal-story {
+
+                p{
+                    color: grey;
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            /* toggle classes */
+
+            .open-menu {
+                display: block;
+            }
+
+            .close-menu {
+                display: none;
+            }
             
         
         }
