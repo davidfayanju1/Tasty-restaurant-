@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import doughnut from '../images/doughnut.jpg'
+import doughnut from '../../images/doughnut.jpg'
 
 const Snack = () => {
     return ( 
@@ -22,7 +22,7 @@ export default Snack;
 
 const StyledSnack = styled.div `
 
-    min-height : 75vh;
+    min-height : 70vh;
     background-image: url( ${ doughnut }) ;
     background-repeat: no-repeat;
     background-size: cover;

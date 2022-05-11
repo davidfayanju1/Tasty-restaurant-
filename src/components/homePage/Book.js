@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import mae from '../images/mae.jpg';
+import mae from '../../images/mae.jpg';
 
 const Book = () => {
     return ( 
