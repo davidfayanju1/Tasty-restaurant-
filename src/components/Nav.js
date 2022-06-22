@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Nav = () => {
 
@@ -27,13 +27,13 @@ const Nav = () => {
 
         window.addEventListener('scroll', changeBackgroundBg);
 
-    },[])
+    },[]);
 
 
 
     return ( 
             <StyledNav bgColor={ bgColor }>                            
-                <h1><a href="#">TASTY.</a></h1>
+                <h1><Link to="/">TASTY.</Link></h1>
                 <div onClick ={ burgerToggle } className={`nav-icon ${ bgColor ? 'burger-active' : 'burger-inactive'}`}>
                     <span className="burger"></span>
                     <span className="burger"></span>
@@ -42,19 +42,19 @@ const Nav = () => {
                 <div className={`nav-links ${toggle ? 'nav-open' : 'nav-close'}`}>
                     <ul>
                         <li>
-                            <Link to="/">HOME</Link>
+                            <NavLink to="/">HOME</NavLink>
                         </li>
 
                         <li>
-                            <Link to="/menu">MENU</Link>
+                            <NavLink to="/menu">MENU</NavLink>
                         </li>
 
                         <li>
-                            <Link to="/reservation">RESERVATION</Link>
+                            <NavLink to="/reservation">RESERVATION</NavLink>
                         </li>
                         
                         <li>
-                            <Link to="/order">ORDER</Link>
+                            <NavLink to="/order">ORDER</NavLink>
                         </li>
                     </ul>
                 </div>
@@ -79,7 +79,7 @@ const StyledNav = styled.nav`
     z-index: 100;
     box-shadow: ${({ bgColor }) => ( bgColor ? '2px 3px 20px rgba(0, 0, 0, 0.1);' : '')};
     
-
+    
 
     /* burger */
 

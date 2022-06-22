@@ -4,6 +4,7 @@ import Menu from '../components/homePage/Menu';
 import Showcase from '../components/homePage/Showcase';
 import SnackIntro from '../components/homePage/SnackIntro';
 import Snack from '../components/homePage/Snacks';
+import Carousel from '../components/homePage/Carousel';
 
 const Home = () => {
     return ( 
@@ -13,6 +14,7 @@ const Home = () => {
             <Menu />
             <Snack />
             <SnackIntro />
+            <Carousel />
         </div>
      );
 }
